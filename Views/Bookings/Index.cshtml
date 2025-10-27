@@ -1,0 +1,38 @@
+﻿@model IEnumerable<TravellerWebApp.Models.Booking>
+@{
+    ViewData["Title"] = "Bookings";
+}
+<h2>Your Bookings</h2>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">No bookings yet — create one!</div>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Customer</th>
+                <th>Destination</th>
+                <th>Date</th>
+                <th>Travellers</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var b in Model)
+        {
+            <tr>
+                <td>@b.Id</td>
+                <td>@b.CustomerName<br /><small>@b.CustomerEmail</small></td>
+                <td>@b.Destination?.Title</td>
+                <td>@b.TravelDate.ToShortDateString()</td>
+                <td>@b.Travelers</td>
+                <td>₹@b.TotalPrice</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}

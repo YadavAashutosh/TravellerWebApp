@@ -1,0 +1,22 @@
+﻿@model IEnumerable<TravellerWebApp.Models.Destination>
+@{
+    ViewData["Title"] = "Destinations";
+}
+<h2>Popular Destinations</h2>
+
+<div class="row">
+    @foreach (var d in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+                <img src="@d.ImageUrl" class="card-img-top" alt="@d.Title" />
+                <div class="card-body">
+                    <h5 class="card-title">@d.Title</h5>
+                    <p class="card-text">@d.Description</p>
+                   <a class="btn btn-outline-primary" asp-controller="Destinations" asp-action="Details" asp-route-id="@d.Id">Details</a>
+                    <a class="btn btn-primary ms-2" asp-controller="Bookings" asp-action="Create" asp-route-destinationId="@d.Id">Book</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

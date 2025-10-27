@@ -1,0 +1,51 @@
+﻿@model TravellerWebApp.Models.Booking
+
+@{
+    ViewData["Title"] = "Book Trip";
+}
+
+<h2>Book a Trip</h2>
+
+<form method="post" asp-action="Create">
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label asp-for="CustomerName" class="form-label">Full name</label>
+            <input asp-for="CustomerName" class="form-control" />
+            <span asp-validation-for="CustomerName" class="text-danger"></span>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="CustomerEmail" class="form-label">Email</label>
+            <input asp-for="CustomerEmail" class="form-control" />
+            <span asp-validation-for="CustomerEmail" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label asp-for="DestinationId" class="form-label">Destination</label>
+            <select asp-for="DestinationId"
+                    asp-items="@(new Microsoft.AspNetCore.Mvc.Rendering.SelectList(ViewBag.Destinations, "Id", "Title"))"
+                    class="form-select">
+                <option value="">-- choose --</option>
+            </select>
+            <span asp-validation-for="DestinationId" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <label asp-for="TravelDate" class="form-label">Travel date</label>
+            <input asp-for="TravelDate" type="date" class="form-control" />
+            <span asp-validation-for="TravelDate" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <label asp-for="Travelers" class="form-label">Travelers</label>
+            <input asp-for="Travelers" type="number" class="form-control" min="1" />
+            <span asp-validation-for="Travelers" class="text-danger"></span>
+        </div>
+    </div>
+
+    <button class="btn btn-success">Confirm Booking</button>
+    <a class="btn btn-secondary ms-2" asp-controller="Destinations" asp-action="Index">Back</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
