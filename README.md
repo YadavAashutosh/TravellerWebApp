@@ -16,7 +16,7 @@ The application is designed for simplicity, clean structure, and smooth performa
 ---
 
 ## 🚀 Features
-- 🗺️ View travel destinations with image and details  
+- 🗺️ View travel destinations with  details  
 - 🗃️ Data stored using SQLite  
 - ⚡ Lightweight and fast setup  
 - 🧩 Follows MVC architecture  
