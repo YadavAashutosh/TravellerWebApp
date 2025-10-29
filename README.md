@@ -48,7 +48,7 @@ The application is designed for simplicity, clean structure, and smooth performa
 
 ```bash
 # 1️⃣ Clone the repository
-git clone https://github.com/yourusername/TravellerWebApp.git
+git clone https://github.com/YadaAashutosh/TravellerWebApp.git
 
 # 2️⃣ Navigate to the project directory
 cd TravellerWebApp
