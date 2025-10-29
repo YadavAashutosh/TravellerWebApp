@@ -9,7 +9,7 @@ A clean and simple ASP.NET Core MVC web application for exploring travel destina
 ---
 
 ## ✨ Overview
-Traveller Web App allows users to view travel destinations with images, names, and descriptions.  
+Traveller Web App allows users to view travel destinations with names, and descriptions.  
 It is built using .NET 8.0 MVC framework and stores data in a local SQLite database.  
 The application is designed for simplicity, clean structure, and smooth performance.
 
